@@ -12,9 +12,11 @@ import {
 } from "react-router-dom";
 
 
+// the data.js is not sending to our database yet
+// 
 // category may not work, attempted to update v5 to v6 router dom
 const App = () => {
-  const user = false //temporary
+  const user = false; //temporary
   return (
     <Router>
       <Switch>
@@ -34,7 +36,7 @@ const App = () => {
           {user ? <Redirect to="/"/> : <Login/>}
         </Route>
         <Route path="/register">
-          <Register />
+          {user ? <Redirect to="/"/> : <Register/>}
         </Route>
       </Switch>
     </Router>
